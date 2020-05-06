@@ -1,15 +1,15 @@
 # Deploying-node-application-on-Heroku
 
-Step 1: Download heroku 
+<strong> Step 1:</strong> Download heroku 
 https://devcenter.heroku.com/articles/heroku-cli
 
-Step 2:Create account on Heroku
+<strong> Step 2:</strong>Create account on Heroku
 https://signup.heroku.com/dc
 
-Step 3:Install git
+<strong> Step 3:</strong>Install git
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-Step 4:Setting up the git for application
+<strong> Step 4:</strong>Setting up the git for application
 open terminal in your project directory and write
 ```
 git init
@@ -17,20 +17,20 @@ git add .
 git commit -m "initial commit"
 
 ```
-Step 5:Add a Heroku Git(https://devcenter.heroku.com/articles/git#creating-a-heroku-remote)
+<strong> Step 5:</strong>:Add a Heroku Git(https://devcenter.heroku.com/articles/git#creating-a-heroku-remote)
 ```
 heroku login
 heroku create
 ```
-Step 6: Add a Procfile (This file tells Heroku which commands to run to start your app.)
+<strong> Step 6:</strong> Add a Procfile (This file tells Heroku which commands to run to start your app.)
 ```
 touch Procfile
-
-Step 7: Inside this Procfile write the following code:
+```
+<strong> Step 7:</strong> Inside this Procfile write the following code:
 ```
 web: node app.js
 ```
-Step 8:Listen to the right port
+<strong> Step 8:</strong>Listen to the right port
 write following code in app.js
 ```
 let port = process.env.PORT;
@@ -42,9 +42,9 @@ app.listen(port,function(){
   console.log("Server is running");
 })
 ```
-Step 9:Use a cloud database(MongoDB atlas)
+<strong> Step 9:</strong>Use a cloud database(MongoDB atlas)
 
-Step 10: Language specific setup(https://devcenter.heroku.com/articles/deploying-nodejs)
+<strong> Step 10:</strong> Language specific setup(https://devcenter.heroku.com/articles/deploying-nodejs)
 Specify the version of node in package.json
 ```
 "engines": {
@@ -53,7 +53,7 @@ Specify the version of node in package.json
  ```
 To check the version type node --version in terminal.
 
-Step 11: Creating .gitignore (To install npm dependencies whenever user runs the application)
+<strong> Step 11:</strong> Creating .gitignore (To install npm dependencies whenever user runs the application)
 ```
 Inside terminal write:
 
@@ -66,13 +66,16 @@ npm-debug.log
 .DS_Store
 /*.env
 ```
-Step 12: Deploying on Heroku
+<strong> Step 12:</strong> Deploying on Heroku
 
 ```
 git add .
 git commit -m "added Procfile,port and gitignore"
 git push heroku master
 ```
+Reference Link: 
+https://devcenter.heroku.com/articles/preparing-a-codebase-for-heroku-deployment
+https://devcenter.heroku.com/articles/deploying-nodejs
 
 
 
