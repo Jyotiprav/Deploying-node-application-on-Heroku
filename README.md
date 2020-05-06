@@ -30,4 +30,53 @@ Step 7: Inside this Procfile write the following code:
 ```
 web: node app.js
 ```
+Step 8:Listen to the right port
+write following code in app.js
+```
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port,function(){
+  console.log("Server is running");
+})
+```
+Step 9:Use a cloud database(MongoDB atlas)
+
+Step 10: Language specific setup(https://devcenter.heroku.com/articles/deploying-nodejs)
+Specify the version of node in package.json
+```
+"engines": {
+    "node": "13.7.0"
+  }
+ ```
+To check the version type node --version in terminal.
+
+Step 11: Creating .gitignore (To install npm dependencies whenever user runs the application)
+```
+Inside terminal write:
+
+touch .gitignore
+
+Write following code inside .gitignore file.
+
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+```
+Step 12: Deploying on Heroku
+
+```
+git add .
+git commit -m "added Procfile,port and gitignore"
+git push heroku master
+```
+
+
+
+
+
+
 
